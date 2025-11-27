@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Libro, Alumno
 from .forms import LibroForm, AlumnoForm
-from django.db.models import Avg
+
 # Create your views here.
 
 def inicio(request):
@@ -13,7 +13,7 @@ def inicio(request):
 })
 def lista_libros(request):
     libro = Libro.objects.all()
-    return render(request,"lista_libros.html", {"libros": lista_libros})
+    return render(request,"lista_libros.html", {"libros": libro})
 def lista_alumnos(request):
     alumnos = Alumno.objects.all()
     return render(request,"lista_alumnos.html", {"alumnos": alumnos})
